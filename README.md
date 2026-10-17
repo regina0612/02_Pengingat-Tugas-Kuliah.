@@ -32,5 +32,5 @@ Tema 2 - Pengingat Tugas Kuliah
 
 ## Status Proyek
 
-Saat ini proyek TemanTugas masih dalam tahap pengembangan. Kami akan mengerjakan aplikasi ini secara bertahap bersama anggota kelompok.
+Saat ini proyek TemanTugas masih dalam tahap pengembangan. Kami akan mengerjakan dan mengembangkan aplikasi ini secara bertahap bersama anggota kelompok.
 
