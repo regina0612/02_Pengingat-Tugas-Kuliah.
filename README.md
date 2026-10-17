@@ -1,30 +1,36 @@
-This is a Kotlin Multiplatform project targeting Android, Desktop (JVM).
+# TemanTugas - Pengingat Tugas Kuliah
 
-* [/shared](./shared/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./shared/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./shared/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./shared/src/jvmMain/kotlin)
-    folder is the appropriate location.
+## Deskripsi Proyek
 
-### Running the apps
+TemanTugas adalah aplikasi pengingat tugas kuliah yang dibuat untuk membantu mahasiswa mencatat tugas dan mengingat deadline pengumpulannya. Aplikasi ini dibuat supaya mahasiswa lebih mudah mengatur tugas kuliah dan mengetahui tugas mana yang sudah selesai dan yang harus dikerjakan.
 
-Use the run configurations provided by the run widget in your IDE's toolbar. You can also use these commands and options:
+Proyek ini dibuat untuk tugas kuliah Pengembangan Aplikasi Mobile di ITERA
 
-- Android app: `./gradlew :androidApp:assembleDebug`
-- Desktop app:
-  - Hot reload: `./gradlew :desktopApp:hotRun --auto`
-  - Standard run: `./gradlew :desktopApp:run`
+## Tema Proyek
 
-### Running tests
+Tema 2 - Pengingat Tugas Kuliah
 
-Use the run button in your IDE's editor gutter, or run tests using Gradle tasks:
+## Anggota Kelompok
 
-- Android tests: `./gradlew :shared:testAndroidHostTest`
-- Desktop tests: `./gradlew :shared:jvmTest`
+1. Rakha Daffa Tama Truski - 124140196
+2. Tarisa Menova - 124140039
+3. Regina Cahyani Putri - 124140063
+4. Raymond Kolose Nathanael Simbolon - 124140186
 
----
+## Fitur yang Direncanakan
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+- Menambahkan tugas kuliah.
+- Menampilkan daftar tugas.
+- Mencatat deadline pengumpulan tugas.
+- Menandai tugas yang sudah selesai.
+
+## Teknologi yang Digunakan
+
+- Kotlin
+- Kotlin Multiplatform (KMP)
+- Compose Multiplatform
+
+## Status Proyek
+
+Saat ini proyek TemanTugas masih dalam tahap pengembangan. Kami akan mengerjakan aplikasi ini secara bertahap bersama anggota kelompok.
+
