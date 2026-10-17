@@ -4,7 +4,7 @@
 
 TemanTugas adalah aplikasi pengingat tugas kuliah yang dibuat untuk membantu mahasiswa mencatat tugas dan mengingat deadline pengumpulannya. Aplikasi ini dibuat supaya mahasiswa lebih mudah mengatur tugas kuliah dan mengetahui tugas mana yang sudah selesai dan yang harus dikerjakan.
 
-Proyek ini dibuat untuk tugas kuliah Pengembangan Aplikasi Mobile di ITERA
+Proyek ini dibuat untuk tugas kuliah Pengembangan Aplikasi Mobile di ITERA.
 
 ## Tema Proyek
 
@@ -26,9 +26,9 @@ Tema 2 - Pengingat Tugas Kuliah
 
 ## Teknologi yang Digunakan
 
-- Kotlin
-- Kotlin Multiplatform (KMP)
-- Compose Multiplatform
+- Kotlin.
+- Kotlin Multiplatform (KMP).
+- Compose Multiplatform.
 
 ## Status Proyek
 
