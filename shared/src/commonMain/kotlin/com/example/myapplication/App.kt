@@ -32,7 +32,7 @@ fun App() {
         Anggota("Raymond Kolose Nathanael Simbolon", "124140186")
     )
 
-    MaterialTheme git {
+    MaterialTheme {
         Column(
             modifier = Modifier
                 .fillMaxSize()
