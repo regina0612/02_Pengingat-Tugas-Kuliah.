@@ -1,4 +1,4 @@
-# TemanTugas - Pengingat Tugas Kuliah
+# TemanTugas - Pengingat Tugas Kuliah TUGAS 1 PAM
 
 ## Deskripsi Proyek
 
@@ -33,4 +33,64 @@ Tema 2 - Pengingat Tugas Kuliah
 ## Status Proyek
 
 Saat ini proyek TemanTugas masih dalam tahap pengembangan. Kami akan mengerjakan aplikasi ini secara bertahap bersama anggota kelompok.
+
+
+# Tugas Proyek Minggu 2 PAM
+## Aplikasi Pengingat Tugas Kuliah
+
+### Nama Anggota Kelompok
+1. 124140039 - Tarisa Menova
+2. 124140063 - Regina Cahyani Putri
+3. 124140196 - Rakha Daffa Tama Truski
+4. 124140186 - Raymond Kolose
+
+### Repository GitHub
+https://github.com/regina0612/PAM_Tema02_PengingatTugasKuliah
+
+## Tentang Proyek
+
+Proyek ini adalah tugas kelompok mata kuliah Pengembangan Aplikasi Mobile (PAM). Tema yang kami ambil adalah Pengingat Tugas Kuliah.
+
+Pada tugas ini, kami membuat dasar aplikasi menggunakan Kotlin. Kami belajar membuat data tugas, mengatur data, dan melihat perubahan status tugas melalui simulasi sederhana.
+
+## Bagian yang Dikerjakan
+
+### 1. Data Model Core
+Bagian ini membuat data yang dibutuhkan dalam aplikasi, yaitu:
+- `Task` untuk data tugas.
+- `Course` untuk data mata kuliah.
+- `TaskStatus` untuk status tugas.
+
+### 2. Repository & Flow Data Source
+Bagian ini mengatur data tugas menggunakan `TaskRepository` dan sumber data. Flow digunakan untuk melihat perubahan data atau status tugas sesuai kode yang dibuat.
+
+### 3. Simulation Runner
+Bagian ini menjalankan simulasi program untuk melihat hasil dan perubahan status tugas melalui console.
+
+### 4. Documentation & README Update
+Bagian ini menjelaskan isi proyek, struktur folder, cara menjalankan program, dan hasil simulasi. README juga digunakan untuk mencatat pembagian tugas anggota kelompok.
+
+## Struktur Proyek
+
+- `androidApp`: bagian aplikasi Android.
+- `desktopApp`: bagian aplikasi desktop.
+- `shared`: tempat kode yang digunakan bersama.
+- `commonMain`: tempat kode utama aplikasi.
+- `commonTest`: tempat file pengujian.
+
+## Hasil Simulasi
+
+![Hasil simulasi program](hasil-simulasi.png)
+
+## Pembagian Tugas
+
+1. Tugas 1: Rakha -> Data Model Core.
+2. Tugas 2: Raymond -> Repository & Flow Data Source.
+3. Tugas 3: Regina -> Simulation Runner.
+4. Tugas 4: Tarisa -> Documentation & README Update.
+
+## Penutup
+
+Dari tugas ini, kami belajar membuat model data, mengatur data tugas, menjalankan simulasi, dan menulis dokumentasi proyek. README ini dibuat supaya isi proyek lebih mudah dipahami.
+
 
