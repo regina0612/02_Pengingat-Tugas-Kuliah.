@@ -36,9 +36,9 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.compose.uiTooling)
         }
-        androidDeviceTest.dependencies {
-            implementation(libs.androidx.test.runner)
-        }
+//        androidTest.dependencies {
+//            implementation(libs.androidx.test.runner)
+//        }
         commonMain.dependencies {
             implementation(libs.compose.runtime)
             implementation(libs.compose.foundation)
