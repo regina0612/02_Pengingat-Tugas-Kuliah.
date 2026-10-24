@@ -26,6 +26,12 @@ import model.Course
 import model.Task
 import model.TaskStatus
 import ui.components.TaskItemCard
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.FloatingActionButtonDefaults
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 import androidx.compose.material3.TextButton
 
 @Composable
@@ -99,14 +105,54 @@ fun TaskListScreen(onKembali: () -> Unit = {})  {
         cocokJudul && cocokStatus
     }
 
+    // =========================================================================
+    // Porsi Tugas 3: Layout Utama & FAB (Raymond Kolose Nathanael Simbolon)
+    // =========================================================================
+    var tampilDialogTambah by remember { mutableStateOf(false) }
+
+    if (tampilDialogTambah) {
+        AlertDialog(
+            onDismissRequest = { tampilDialogTambah = false },
+            title = {
+                Text(
+                    text = "Tambah Tugas Baru",
+                    fontWeight = FontWeight.Bold,
+                    color = Color(0xFF567568)
+                )
+            },
+            text = {
+                Text(
+                    text = "Aksi utama penambahan tugas (FAB) berhasil diimplementasikan sesuai ketentuan Modul 3. Formulir input data akan aktif pada modul berikutnya."
+                )
+            },
+            confirmButton = {
+                TextButton(onClick = { tampilDialogTambah = false }) {
+                    Text("Mengerti", color = Color(0xFF567568), fontWeight = FontWeight.Bold)
+                }
+            },
+            shape = RoundedCornerShape(16.dp),
+            containerColor = Color.White
+        )
+    }
+
     Scaffold(
+        containerColor = Color(0xFFF6F3EA),
         floatingActionButton = {
             FloatingActionButton(
+                containerColor = Color(0xFF567568),
+                contentColor = Color.White,
+                shape = RoundedCornerShape(16.dp),
+                elevation = FloatingActionButtonDefaults.elevation(defaultElevation = 4.dp),
                 onClick = {
-                    // Tombol tambah disiapkan untuk pengembangan berikutnya.
+                    // Porsi Tugas 3: FAB siap digunakan
+                    tampilDialogTambah = true
                 }
             ) {
-                Text("+")
+                Text(
+                    text = "+",
+                    fontSize = 26.sp,
+                    fontWeight = FontWeight.Bold
+                )
             }
         }
     ) { innerPadding ->
@@ -120,11 +166,13 @@ fun TaskListScreen(onKembali: () -> Unit = {})  {
                 onClick = onKembali,
                 modifier = Modifier.padding(horizontal = 8.dp)
             ) {
-                Text("← Kembali ke TemanTugas")
+                Text("← Kembali ke TemanTugas", color = Color(0xFF567568), fontWeight = FontWeight.SemiBold)
             }
             Text(
                 text = "Daftar Tugas Kuliah",
                 style = MaterialTheme.typography.headlineSmall,
+                fontWeight = FontWeight.Bold,
+                color = Color(0xFF567568),
                 modifier = Modifier.padding(16.dp)
             )
 
