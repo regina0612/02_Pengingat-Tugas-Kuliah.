@@ -14,6 +14,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import tampilan.TaskListScreen
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 
 data class Anggota(
     val nama: String,
@@ -24,6 +31,7 @@ data class Anggota(
 fun App() {
     val hijau = Color(0xFF567568)
     val krem = Color(0xFFF6F3EA)
+    var bukaDaftarTugas by remember { mutableStateOf(false) }
 
     val anggota = listOf(
         Anggota("Rakha Daffa Tama Truski", "124140196"),
@@ -33,118 +41,137 @@ fun App() {
     )
 
     MaterialTheme {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(krem)
-                .verticalScroll(rememberScrollState())
-                .padding(20.dp),
-            horizontalAlignment = Alignment.Start
-        ) {
-            Spacer(modifier = Modifier.height(20.dp))
-
-            Text(
-                text = "TemanTugas",
-                fontSize = 30.sp,
-                fontWeight = FontWeight.Bold,
-                color = hijau
+        if (bukaDaftarTugas) {
+            TaskListScreen(
+                onKembali = { bukaDaftarTugas = false }
             )
-
-            Text(
-                text = "Pengingat Tugas Kuliah",
-                fontSize = 16.sp,
-                color = Color.DarkGray
-            )
-
-            Spacer(modifier = Modifier.height(20.dp))
-
-            Card(
-                modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(12.dp),
-                colors = CardDefaults.cardColors(
-                    containerColor = Color.White
-                )
+        } else {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(krem)
+                    .verticalScroll(rememberScrollState())
+                    .padding(20.dp),
+                horizontalAlignment = Alignment.Start
             ) {
-                Column(
-                    modifier = Modifier.padding(16.dp),
-                    verticalArrangement = Arrangement.spacedBy(10.dp)
-                ) {
-                    Text(
-                        text = "Tentang Aplikasi",
-                        fontSize = 21.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = hijau
-                    )
+                Spacer(modifier = Modifier.height(20.dp))
 
-                    Text(
-                        text = "TemanTugas merupakan aplikasi yang " +
-                                "dibuat untuk membantu mahasiswa mencatat " +
-                                "tugas kuliah dan mengingat deadline " +
-                                "agar tugas dapat dikerjakan dengan teratur.",
-                        fontSize = 14.sp
-                    )
+                Text(
+                    text = "TemanTugas",
+                    fontSize = 30.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = hijau
+                )
 
-                    HorizontalDivider()
+                Text(
+                    text = "Pengingat Tugas Kuliah",
+                    fontSize = 16.sp,
+                    color = Color.DarkGray
+                )
 
-                    Text(
-                        text = "Tema: Pengingat Tugas Kuliah",
-                        fontSize = 15.sp
-                    )
+                Spacer(modifier = Modifier.height(20.dp))
 
-                    Text(
-                        text = "Platform: ${getPlatform().name}",
-                        fontSize = 15.sp
-                    )
-                }
-            }
-
-            Spacer(modifier = Modifier.height(20.dp))
-
-            Text(
-                text = "Anggota Kelompok",
-                fontSize = 21.sp,
-                fontWeight = FontWeight.Bold,
-                color = hijau
-            )
-
-            Spacer(modifier = Modifier.height(10.dp))
-
-            anggota.forEachIndexed { index, orang ->
                 Card(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(bottom = 10.dp),
-                    shape = RoundedCornerShape(10.dp),
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(12.dp),
                     colors = CardDefaults.cardColors(
                         containerColor = Color.White
                     )
                 ) {
                     Column(
-                        modifier = Modifier.padding(14.dp)
+                        modifier = Modifier.padding(16.dp),
+                        verticalArrangement = Arrangement.spacedBy(10.dp)
                     ) {
                         Text(
-                            text = "${index + 1}. ${orang.nama}",
-                            fontSize = 15.sp,
-                            fontWeight = FontWeight.Medium
+                            text = "Tentang Aplikasi",
+                            fontSize = 21.sp,
+                            fontWeight = FontWeight.Bold,
+                            color = hijau
                         )
 
                         Text(
-                            text = "NIM: ${orang.nim}",
-                            fontSize = 14.sp,
-                            color = hijau
+                            text = "TemanTugas merupakan aplikasi yang " +
+                                    "dibuat untuk membantu mahasiswa mencatat " +
+                                    "tugas kuliah dan mengingat deadline " +
+                                    "agar tugas dapat dikerjakan dengan teratur.",
+                            fontSize = 14.sp
+                        )
+
+                        HorizontalDivider()
+
+                        Text(
+                            text = "Tema: Pengingat Tugas Kuliah",
+                            fontSize = 15.sp
+                        )
+
+                        Text(
+                            text = "Platform: ${getPlatform().name}",
+                            fontSize = 15.sp
                         )
                     }
                 }
-            }
+                Button(
+                    onClick = { bukaDaftarTugas = true },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = hijau
+                    )
+                ) {
+                    Text(
+                        text = "Lihat Daftar Tugas",
+                        color = Color.White
+                    )
+                }
 
-            Spacer(modifier = Modifier.height(10.dp))
+                Spacer(modifier = Modifier.height(20.dp))
 
-            Text(
-                text = "PAM",
-                fontSize = 12.sp,
-                color = Color.Gray,
-                modifier = Modifier.align(Alignment.CenterHorizontally)
-            )
+                Text(
+                    text = "Anggota Kelompok",
+                    fontSize = 21.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = hijau
+                )
+
+                Spacer(modifier = Modifier.height(10.dp))
+
+                anggota.forEachIndexed { index, orang ->
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(bottom = 10.dp),
+                        shape = RoundedCornerShape(10.dp),
+                        colors = CardDefaults.cardColors(
+                            containerColor = Color.White
+                        )
+                    ) {
+                        Column(
+                            modifier = Modifier.padding(14.dp)
+                        ) {
+                            Text(
+                                text = "${index + 1}. ${orang.nama}",
+                                fontSize = 15.sp,
+                                fontWeight = FontWeight.Medium
+                            )
+
+                            Text(
+                                text = "NIM: ${orang.nim}",
+                                fontSize = 14.sp,
+                                color = hijau
+                            )
+                        }
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(10.dp))
+
+                Text(
+                    text = "PAM",
+                    fontSize = 12.sp,
+                    color = Color.Gray,
+                    modifier = Modifier.align(Alignment.CenterHorizontally)
+                )
+        }
+
         }
     }
 }
